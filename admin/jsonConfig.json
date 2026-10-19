@@ -1,0 +1,190 @@
+{
+  "type": "tabs",
+  "i18n": true,
+  "items": {
+    "_account": {
+      "type": "panel",
+      "label": "Cloud account",
+      "items": {
+        "_accountHelp": {
+          "type": "staticText",
+          "text": "Account help",
+          "newLine": true,
+          "xs": 12
+        },
+        "username": {
+          "type": "text",
+          "label": "Account email",
+          "xs": 12,
+          "sm": 6
+        },
+        "password": {
+          "type": "password",
+          "label": "Account password",
+          "visible": true,
+          "xs": 12,
+          "sm": 6
+        },
+        "refreshToken": {
+          "type": "password",
+          "label": "Refresh token",
+          "help": "Refresh token help",
+          "visible": true,
+          "newLine": true,
+          "xs": 12
+        },
+        "clientId": {
+          "type": "text",
+          "label": "Custom OAuth client ID",
+          "help": "OAuth client help",
+          "newLine": true,
+          "xs": 12,
+          "sm": 6
+        },
+        "clientSecret": {
+          "type": "password",
+          "label": "Custom OAuth client secret",
+          "visible": true,
+          "xs": 12,
+          "sm": 6
+        }
+      }
+    },
+    "_communication": {
+      "type": "panel",
+      "label": "Updates",
+      "items": {
+        "enableEvents": {
+          "type": "checkbox",
+          "label": "Enable live events",
+          "help": "Events help",
+          "xs": 12
+        },
+        "pollInterval": {
+          "type": "number",
+          "label": "Poll interval in seconds",
+          "help": "Poll interval help",
+          "min": 15,
+          "max": 3600,
+          "step": 1,
+          "newLine": true,
+          "xs": 12,
+          "sm": 6
+        },
+        "requestTimeout": {
+          "type": "number",
+          "label": "Request timeout in seconds",
+          "min": 5,
+          "max": 120,
+          "step": 1,
+          "xs": 12,
+          "sm": 6
+        }
+      }
+    },
+    "_localGateways": {
+      "type": "panel",
+      "label": "Gateway pairing",
+      "items": {
+        "_gatewayHelp": {
+          "type": "staticText",
+          "text": "Gateway pairing help",
+          "xs": 12
+        },
+        "gateways": {
+          "type": "table",
+          "label": "Local gateways",
+          "newLine": true,
+          "xs": 12,
+          "sm": 12,
+          "uniqueColumns": [
+            "id"
+          ],
+          "items": [
+            {
+              "type": "text",
+              "attr": "id",
+              "title": "Gateway ID",
+              "default": "",
+              "width": "35%"
+            },
+            {
+              "type": "text",
+              "attr": "host",
+              "title": "Local IP or hostname",
+              "default": "",
+              "width": "40%"
+            },
+            {
+              "type": "select",
+              "attr": "signingScheme",
+              "title": "Signing scheme",
+              "default": "auto",
+              "width": "25%",
+              "options": [
+                {
+                  "label": "Automatic from firmware",
+                  "value": "auto"
+                },
+                {
+                  "label": "HMAC for newer gateways",
+                  "value": "hmac"
+                },
+                {
+                  "label": "SHA512 for older gateways",
+                  "value": "sha512"
+                }
+              ]
+            }
+          ]
+        },
+        "_pairingSteps": {
+          "type": "staticText",
+          "text": "Pairing steps",
+          "newLine": true,
+          "xs": 12
+        },
+        "_pairingDocs": {
+          "type": "staticLink",
+          "label": "Open pairing instructions",
+          "href": "https://github.com/SvenM74/iobroker.velux-extended#gateway-koppeln",
+          "newLine": true,
+          "xs": 12
+        }
+      }
+    },
+    "_advanced": {
+      "type": "panel",
+      "label": "Advanced",
+      "items": {
+        "allowIndividualStop": {
+          "type": "checkbox",
+          "label": "Allow experimental individual stop",
+          "help": "Individual stop help",
+          "xs": 12
+        },
+        "forceCommands": {
+          "type": "checkbox",
+          "label": "Send movement commands with force",
+          "help": "Force commands help",
+          "newLine": true,
+          "xs": 12
+        },
+        "rawData": {
+          "type": "checkbox",
+          "label": "Expose raw cloud data",
+          "help": "Raw data help",
+          "newLine": true,
+          "xs": 12
+        },
+        "_support": {
+          "type": "staticLink",
+          "label": "Documentation and known limits",
+          "href": "https://github.com/SvenM74/iobroker.velux-extended#readme",
+          "newLine": true,
+          "xs": 12
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "common": {
+    "name": "velux-extended",
+    "version": "0.1.0",
+    "news": {
+      "0.1.0": {
+        "en": "Initial implementation: gateway stop, device and room controls, local key pairing, signed cloud commands and live events. Hardware validation is pending.",
+        "de": "Erste Implementierung: Gateway-Stopp, Geräte- und Raumsteuerung, lokale Schlüsselkopplung, signierte Cloudbefehle und Live-Ereignisse. Der Test an echter Hardware steht noch aus."
+      }
+    },
+    "titleLang": {
+      "en": "VELUX Extended",
+      "de": "VELUX Extended"
+    },
+    "desc": {
+      "en": "Control VELUX ACTIVE gateways, windows and blinds through the cloud, with local key pairing for signed commands.",
+      "de": "VELUX ACTIVE Gateways, Fenster und Rollos über die Cloud steuern, mit lokaler Schlüsselkopplung für signierte Befehle."
+    },
+    "authors": [
+      "SvenM74"
+    ],
+    "keywords": [
+      "velux",
+      "netatmo",
+      "blinds",
+      "windows"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "mode": "daemon",
+    "enabled": true,
+    "compact": true,
+    "loglevel": "info",
+    "icon": "velux-extended.png",
+    "extIcon": "https://raw.githubusercontent.com/SvenM74/iobroker.velux-extended/main/admin/velux-extended.png",
+    "readme": "https://github.com/SvenM74/iobroker.velux-extended/blob/main/README.md",
+    "type": "climate-control",
+    "connectionType": "cloud",
+    "dataSource": "push",
+    "adminUI": {
+      "config": "json"
+    },
+    "messagebox": true,
+    "dependencies": [
+      {
+        "js-controller": ">=7.2.2"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=6.0.0"
+      }
+    ]
+  },
+  "native": {
+    "username": "",
+    "password": "",
+    "refreshToken": "",
+    "clientId": "",
+    "clientSecret": "",
+    "pollInterval": 60,
+    "requestTimeout": 15,
+    "enableEvents": true,
+    "allowIndividualStop": false,
+    "forceCommands": false,
+    "rawData": false,
+    "gateways": []
+  },
+  "encryptedNative": [
+    "password",
+    "refreshToken",
+    "clientSecret"
+  ],
+  "protectedNative": [
+    "password",
+    "refreshToken",
+    "clientSecret"
+  ],
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": {
+          "en": "Adapter information",
+          "de": "Adapterinformationen"
+        }
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Connected to the cloud",
+          "de": "Mit der Cloud verbunden"
+        },
+        "type": "boolean",
+        "role": "indicator.connected",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
+}

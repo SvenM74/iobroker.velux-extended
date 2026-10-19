@@ -1,0 +1,15 @@
+node_modules/
+coverage/
+*.log
+*.tgz
+.env
+.env.*
+!.env.example
+.DS_Store
+*.apk
+*.apks
+*.apk+
+*.dex
+analysis*/
+credentials*.json
+gateway-keys*.json

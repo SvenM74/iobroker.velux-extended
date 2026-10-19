@@ -1,0 +1,46 @@
+{
+  "name": "iobroker.velux-extended",
+  "version": "0.1.0",
+  "description": "Extended VELUX ACTIVE integration for ioBroker with gateway stop, signed commands and live events",
+  "author": "SvenM74",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "main.js",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "test": "node --test --experimental-test-isolation=none test/*.test.js",
+    "check": "node -e \"const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process');function check(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){if(e.name.startsWith('.')||e.name==='node_modules')continue;const f=path.join(dir,e.name);if(e.isDirectory())check(f);else if(f.endsWith('.js')){const r=cp.spawnSync(process.execPath,['--check',f],{stdio:'inherit'});if(r.status!==0)process.exit(r.status||1);}}}check('.');\""
+  },
+  "dependencies": {
+    "@iobroker/adapter-core": "^3.4.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SvenM74/iobroker.velux-extended.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SvenM74/iobroker.velux-extended/issues"
+  },
+  "homepage": "https://github.com/SvenM74/iobroker.velux-extended#readme",
+  "keywords": [
+    "ioBroker",
+    "velux",
+    "netatmo",
+    "shutter",
+    "window",
+    "blind",
+    "smart-home"
+  ],
+  "files": [
+    "main.js",
+    "lib/",
+    "admin/",
+    "docs/",
+    "io-package.json",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ]
+}

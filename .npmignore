@@ -1,0 +1,15 @@
+.github/
+test/
+coverage/
+node_modules/
+*.log
+*.tgz
+.env
+.env.*
+*.apk
+*.apks
+*.apk+
+*.dex
+analysis*/
+credentials*.json
+gateway-keys*.json
